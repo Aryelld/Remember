@@ -6,7 +6,7 @@ import 'pages/visualizaStories.dart';
 
 Map<String, StatelessWidget Function(BuildContext)> routes(primeiroAcesso) {
   return {
-    '/' : (BuildContext context) => primeiroAcesso ? PrimeiroAcessoPage : InicialPage(),
+    '/' : (BuildContext context) => primeiroAcesso ? PrimeiroAcessoPage() : InicialPage(),
     '/addStorie' : (BuildContext context) => AdicionaStoriePage(),
     '/visualizaStories' : (BuildContext context) => VisualizaStoriesPage()
   };

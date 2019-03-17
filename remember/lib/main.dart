@@ -16,8 +16,6 @@ void main() async{
   
   final initialState = await persistor.load();
 
-  print(initialState);
-
   final store = Store<AppState>(
     reducer,
     initialState: initialState,
@@ -42,6 +40,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Sans',
           accentColor: Colors.black54,
+          backgroundColor: Colors.white,
           primaryColor: Colors.greenAccent
         ),
         routes: routes(this.store.state.primeiroAcesso),
