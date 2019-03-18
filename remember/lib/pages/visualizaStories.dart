@@ -9,7 +9,15 @@ class VisualizaStoriesPage extends StatelessWidget {
     return SimpleBackground(
       children: <Widget>[
         Container(
-            child: Text('oiiiii')
+            child: Column(
+              children: <Widget>[
+                Text('oiiiii'),
+                RaisedButton(
+                  child: Text('voltar'),
+                  onPressed: (){Navigator.pop(context);},
+                )
+              ],
+            )
         )
       ],
     );

@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white,
           primaryColor: Colors.greenAccent
         ),
+        initialRoute: '/',
         routes: routes(this.store.state.primeiroAcesso),
       )
     );

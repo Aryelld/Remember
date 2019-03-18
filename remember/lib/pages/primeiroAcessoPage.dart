@@ -17,7 +17,7 @@ class PrimeiroAcessoPage extends StatelessWidget {
         ),
         Divider(height: 5.0, color: Colors.transparent),
         RaisedButton(
-          onPressed: (){},
+          onPressed: (){Navigator.pushNamed(context,'/visualizaStories');},
           child: Text(
             "Continuar",
             style: TextStyle(
