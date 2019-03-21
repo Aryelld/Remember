@@ -1,6 +1,8 @@
+import 'dart:io';
+
 class AppState{
   String nome;
-  String foto;
+  File foto;
   bool primeiroAcesso;
   List<String> stories;
 
@@ -8,13 +10,13 @@ class AppState{
 
   static AppState fromJson(dynamic json) {
     if(json == null){
-      return AppState('','', true, <String>[]);
+      return AppState('',  null, true, <String>[]);
     }else{
       return AppState(
         json["nome"], 
         json["foto"], 
         json["primeiroAcesso"],
-        json["stories"]  
+        json["stories"].toString() =='[]' ? <String>[] : json["stories"],
       );
     }
   } 

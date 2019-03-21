@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Sans',
           accentColor: Colors.black54,
           backgroundColor: Colors.white,
-          primaryColor: Colors.greenAccent
+          primaryColor: Colors.deepPurple
         ),
         routes: routes(this.store.state.primeiroAcesso),
       )
