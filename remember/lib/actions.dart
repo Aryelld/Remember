@@ -1,7 +1,9 @@
-import 'dart:io';
-
 class Login{
-  File foto;
   String nome;
-  Login(this.foto, this.nome);
+  Login(this.nome);
+}
+
+class SetFoto{
+  String foto;
+  SetFoto(this.foto);
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remember/utils/simpleBackground.dart';
 
-
 class VisualizaStoriesPage extends StatelessWidget {
 
   @override
@@ -11,11 +10,7 @@ class VisualizaStoriesPage extends StatelessWidget {
         Container(
             child: Column(
               children: <Widget>[
-                Text('oiiiii'),
-                RaisedButton(
-                  child: Text('voltar'),
-                  onPressed: (){Navigator.pop(context);},
-                )
+                Text('oiiiii')
               ],
             )
         )

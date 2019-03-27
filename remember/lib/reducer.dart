@@ -3,10 +3,11 @@ import 'state.dart';
 
 AppState reducer(AppState prev, dynamic action){
   if(action is Login){
-    prev.foto =action.foto;
     prev.nome =action.nome;
     prev.primeiroAcesso = false;
+  }else if(action is SetFoto){
+    prev.foto = action.foto;
   }
-  print(prev.stories);
+  print(prev.toString());
   return prev;
 }
