@@ -28,7 +28,7 @@ class PrimeiroAcessoState extends State<PrimeiroAcessoPageState> {
   _onSubmit(logar) {
     if (_nome != null && _nome.length > 2) {
       logar(_nome);
-      Navigator.of(context).pushReplacementNamed("/inicio");
+      Navigator.of(context).popAndPushNamed("/inicio");
     } else {
       setState(() {
         _error = 'Digite pelo menos 3 digitos para um nome';
@@ -42,6 +42,7 @@ class PrimeiroAcessoState extends State<PrimeiroAcessoPageState> {
       return (nome) => store.dispatch(Login(nome));
     }, builder: (context, logar) {
       return SimpleBackground(
+        margin: const EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Text("Remember",

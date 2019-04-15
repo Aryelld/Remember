@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_statusbar_manager/flutter_statusbar_manager.dart';
 
 class SimpleBackground extends StatelessWidget {
-  SimpleBackground({this.children, this.mainAxisAlignment});
+  SimpleBackground({
+    this.children, 
+    this.mainAxisAlignment,
+    this.margin
+  });
   final List<Widget> children;
   final MainAxisAlignment mainAxisAlignment;
+  final EdgeInsetsGeometry margin;
 
   _changeNavigationBarColor(Color color) async {
     await FlutterStatusbarManager.setStyle(StatusBarStyle.DARK_CONTENT);
@@ -22,7 +27,7 @@ class SimpleBackground extends StatelessWidget {
       body: new Center(
           child: new Container(
         child: new Container(
-            margin: const EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
+            margin: margin,
             child: new Column(
                 mainAxisAlignment: mainAxisAlignment, children: children)),
         height: double.infinity,

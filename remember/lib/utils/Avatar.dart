@@ -12,14 +12,16 @@ class Avatar extends StatelessWidget{
 
   Avatar({
     this.radius,
+    this.tag
   });
   
+  final String tag;
   final double radius;
 
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: 'avatar',
+      tag: tag == null? 'avatar' : tag,
       child: StoreConnector<AppState, GetFotoCallback>(
         converter: (store){
           return () => store.state.foto;

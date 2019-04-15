@@ -7,7 +7,13 @@ AppState reducer(AppState prev, dynamic action){
     prev.primeiroAcesso = false;
   }else if(action is SetFoto){
     prev.foto = action.foto;
+  }else if(action is AddStorie){
+    if(prev.stories[action.horario] == null){
+      prev.stories[action.horario] = List<dynamic>();
+    }
+    prev.stories[action.horario].addAll(action.fotos);
   }
-  print(prev.toString());
+
+  print(prev.stories);
   return prev;
 }
