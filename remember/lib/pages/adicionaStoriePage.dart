@@ -9,8 +9,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:remember/utils/simpleBackground.dart';
 import 'package:image_picker_modern/image_picker_modern.dart';
 
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
 typedef AddStorieCalllback = Function(List<dynamic> fotos, String horario);
 
 class AdicionaStoriePage extends StatelessWidget {
@@ -98,23 +96,6 @@ class AdicionaStorieState extends State<AdicionaStoriePageState> {
             onPressed: () async {
               if(_fotos != null && _fotos.length > 0){
                 addStorie(_fotos, _selectedDate.format(context));
-                FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
-                var initializationSettingsAndroid =
-                    new AndroidInitializationSettings('app_icon');
-                var initializationSettingsIOS = new IOSInitializationSettings();
-                var initializationSettings = new InitializationSettings(
-                  initializationSettingsAndroid, initializationSettingsIOS);
-                flutterLocalNotificationsPlugin.initialize(initializationSettings,
-                    onSelectNotification: onSelectNotification);
-                var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
-                  'your channel id', 'your channel name', 'your channel description',
-                  importance: Importance.Max, priority: Priority.High);
-                var iOSPlatformChannelSpecifics = new IOSNotificationDetails();
-                var platformChannelSpecifics = new NotificationDetails(
-                  androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
-                await flutterLocalNotificationsPlugin.show(
-                  0, 'plain title', 'plain body', platformChannelSpecifics,
-                  payload: 'item id 2');
                 Navigator.of(context).pop();
               }
             },
